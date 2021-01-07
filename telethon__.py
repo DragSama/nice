@@ -1,0 +1,1 @@
+(lambda: (globals().update({'telethon': __import__('importlib').import_module('telethon.sync')}), globals().update({'c': telethon.TelegramClient('b', input('API ID:'), input('API HASH:')).start(bot_token=input('BOT TOKEN:'))}), c.add_event_handler(lambda e: e.reply('hi'), telethon.events.NewMessage(pattern='!hello')), c.run_until_disconnected()))()
