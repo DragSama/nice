@@ -1,0 +1,2 @@
+# Based on https://github.com/aiogram/aiogram#poll-botapi-for-updates-and-process-updates
+(lambda: (globals().update({"asyncio": __import__("asyncio"), "aiogram": __import__("aiogram")}),globals().update({"bot": aiogram.Bot(input("Enter Bot Token: "))}),globals().update({"dp": aiogram.Dispatcher(bot=bot)}),dp.register_message_handler((lambda event: event.answer(f"Hello, {event.from_user.get_mention(as_html=True)} 👋!", parse_mode=aiogram.types.ParseMode.HTML)), commands={"start", "restart"}),asyncio.get_event_loop().run_until_complete(dp.start_polling())))()
